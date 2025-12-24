@@ -2,6 +2,9 @@
 
 AI-powered fitness assistant that generates personalized workout and diet plans using Google Gemini AI.
 
+## Deployment
+https://ai-fitness-coach-bice.vercel.app/
+
 ## ✨ Features
 
 - 🎯 Personalized 7-day workout plans
