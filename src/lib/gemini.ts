@@ -99,20 +99,3 @@ export async function generateMotivationQuote() {
   return response.text().trim().replace(/['"]/g, '');
 }
 
-export async function generateImage(prompt: string) {
-  // Using Gemini's imagen model for image generation
-  const imageModel = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
-  
-  const fullPrompt = `Generate a detailed description for creating an image of: ${prompt}. 
-  Make it realistic, high-quality, and fitness/food photography style. 
-  Maximum 100 words, focus on visual details.`;
-  
-  const result = await imageModel.generateContent(fullPrompt);
-  const description = result.response.text();
-  
-  // Return description that can be used with image generation APIs
-  return {
-    description,
-    searchTerm: prompt
-  };
-}

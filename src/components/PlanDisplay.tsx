@@ -4,7 +4,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FitnessPlan, UserDetails } from "@/types";
 import VoiceReader from "./VoiceReader";
-import ImageModal from "./ImageModal";
 import ExportPDF from "./ExportPDF";
 import {
   Dumbbell,
@@ -230,14 +229,6 @@ export default function PlanDisplay({
           </p>
         </div>
       </div>
-
-      {/* Image Modal */}
-      {selectedImage && (
-        <ImageModal
-          prompt={selectedImage}
-          onClose={() => setSelectedImage(null)}
-        />
-      )}
     </motion.div>
   );
 }

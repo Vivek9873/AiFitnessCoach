@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateFitnessPlan } from '@/lib/gemini';
+import { UserDetails } from '@/types';
 
 export async function POST(request: NextRequest) {
   try {
-    const userDetails = await request.json();
+    const userDetails:UserDetails = await request.json();
 
     // Validate required fields
-    if (!userDetails.name || !userDetails.age || !userDetails.height || !userDetails.weight) {
+    if (!userDetails.name || !userDetails.age || !userDetails.height|| !userDetails.weight || !userDetails.dietaryPreference || !userDetails.fitnessGoal || !userDetails.fitnessLevel || !userDetails.gender || !userDetails.workoutLocation) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
